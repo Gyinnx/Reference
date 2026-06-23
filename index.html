@@ -31,33 +31,39 @@
       text-align: left;
     }
 
-    ol {
-      padding-left: 24px;
+    .reference-list {
+      list-style: none;
+      counter-reset: reference-counter;
+      padding-left: 0;
       margin: 0;
     }
 
-    li {
-      margin-bottom: 18px;
+    .reference-list li {
+      counter-increment: reference-counter;
+      position: relative;
+      padding-left: 48px;
+      margin-bottom: 20px;
       word-break: break-word;
     }
 
+    .reference-list li::before {
+      content: "[" counter(reference-counter) "]";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-weight: bold;
+    }
+
     a {
+      display: block;
       color: #0056b3;
       text-decoration: none;
+      margin-top: 4px;
+      word-break: break-all;
     }
 
     a:hover {
       text-decoration: underline;
-    }
-
-    .reference-title {
-      font-weight: bold;
-    }
-
-    .reference-link {
-      display: block;
-      margin-top: 4px;
-      font-size: 15px;
     }
 
     @media (max-width: 600px) {
@@ -71,15 +77,13 @@
         margin-bottom: 20px;
       }
 
-      ol {
-        padding-left: 20px;
+      .reference-list li {
+        padding-left: 42px;
+        margin-bottom: 18px;
+        font-size: 15px;
       }
 
-      li {
-        margin-bottom: 16px;
-      }
-
-      .reference-link {
+      a {
         font-size: 14px;
       }
     }
@@ -92,6 +96,10 @@
       h1 {
         font-size: 28px;
       }
+
+      .reference-list li {
+        font-size: 14px;
+      }
     }
   </style>
 </head>
@@ -100,66 +108,41 @@
   <div class="container">
     <h1>Reference</h1>
 
-   <ol>
-  <li>
-    Musk, E., & Neuralink. (2019). An integrated brain-machine interface platform with thousands of channels.
-    <i>Journal of Medical Internet Research, 21</i>(10), e16194.
-    <a href="https://www.jmir.org/2019/10/e16194/" target="_blank" rel="noopener noreferrer">
-      https://www.jmir.org/2019/10/e16194/
-    </a>
-  </li>
+    <ol class="reference-list">
+      <li>
+        Musk, E., & Neuralink. (2019). An integrated brain-machine interface platform with thousands of channels.
+        <i>Journal of Medical Internet Research, 21</i>(10), e16194.
+        <a href="https://www.jmir.org/2019/10/e16194/" target="_blank" rel="noopener noreferrer">
+          https://www.jmir.org/2019/10/e16194/
+        </a>
+      </li>
 
-  <li>
-    Peksa, J., & Mamchur, D. (2023). State-of-the-Art on Brain-Computer Interface Technology.
-    <i>Sensors, 23</i>(13), 6001.
-    <a href="https://doi.org/10.3390/s23136001" target="_blank" rel="noopener noreferrer">
-      https://doi.org/10.3390/s23136001
-    </a>
-  </li>
+      <li>
+        Wolpaw, J. R., Birbaumer, N., McFarland, D. J., Pfurtscheller, G., & Vaughan, T. M. (2002).
+        Brain-computer interfaces for communication and control.
+        <i>Clinical Neurophysiology, 113</i>(6), 767–791.
+        <a href="https://www.ai.rug.nl/~lambert/projects/BCI/literature/serious/non-invasive/BCI-for-communication-and-control.pdf" target="_blank" rel="noopener noreferrer">
+          https://www.ai.rug.nl/~lambert/projects/BCI/literature/serious/non-invasive/BCI-for-communication-and-control.pdf
+        </a>
+      </li>
 
-  <li>
-    Maiseli, B., Abdalla, A. T., Massawe, L. V., Mbise, M., Mkocha, K., Nassor, N. A., Ismail, M., Michael, J., & Kimambo, S. (2023).
-    Brain–computer interface: trend, challenges, and threats.
-    <i>Brain Informatics, 10</i>(1), 1–16.
-    <a href="https://doi.org/10.1186/s40708-023-00199-3" target="_blank" rel="noopener noreferrer">
-      https://doi.org/10.1186/s40708-023-00199-3
-    </a>
-  </li>
+      <li>
+        CellML Model Repository. (n.d.).
+        Hodgkin–Huxley squid axon model (1952). Retrieved August 5, 2026, from
+        <a href="https://models.cellml.org/exposure/5d116522c3b43ccaeb87a1ed10139016" target="_blank" rel="noopener noreferrer">
+          https://models.cellml.org/exposure/5d116522c3b43ccaeb87a1ed10139016
+        </a>
+      </li>
 
-  <li>
-    Musk, E., & Neuralink. (2019). An Integrated Brain-Machine Interface Platform With Thousands of Channels.
-    <i>Journal of Medical Internet Research, 21</i>(10), e16194.
-    <a href="https://doi.org/10.2196/16194" target="_blank" rel="noopener noreferrer">
-      https://doi.org/10.2196/16194
-    </a>
-  </li>
-
-  <li>
-    Wolpaw, J. R., Birbaumer, N., McFarland, D. J., Pfurtscheller, G., & Vaughan, T. M. (2002).
-    Brain-computer interfaces for communication and control.
-    <i>Clinical Neurophysiology, 113</i>(6), 767–791.
-    <a href="https://www.ai.rug.nl/~lambert/projects/BCI/literature/serious/non-invasive/BCI-for-communication-and-control.pdf" target="_blank" rel="noopener noreferrer">
-      https://www.ai.rug.nl/~lambert/projects/BCI/literature/serious/non-invasive/BCI-for-communication-and-control.pdf
-    </a>
-  </li>
-
-  <li>
-    CellML Model Repository. (n.d.).
-    Hodgkin–Huxley squid axon model (1952). Retrieved August 5, 2026, from
-    <a href="https://models.cellml.org/exposure/5d116522c3b43ccaeb87a1ed10139016" target="_blank" rel="noopener noreferrer">
-      https://models.cellml.org/exposure/5d116522c3b43ccaeb87a1ed10139016
-    </a>
-  </li>
-
-  <li>
-    Wang, X., Jiang, W., Yang, H., Ye, Y., Zhou, Z., Sun, L., Nie, Y., Tao, H., & Wei, X. (2024).
-    Ultraflexible PEDOT:PSS/IrOx-Modified Electrodes: Applications in Behavioral Modulation and Neural Signal Recording in Mice.
-    <i>PubMed Central</i>.
-    <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11051784/" target="_blank" rel="noopener noreferrer">
-      https://pmc.ncbi.nlm.nih.gov/articles/PMC11051784/
-    </a>
-  </li>
-</ol>
+      <li>
+        Wang, X., Jiang, W., Yang, H., Ye, Y., Zhou, Z., Sun, L., Nie, Y., Tao, H., & Wei, X. (2024).
+        Ultraflexible PEDOT:PSS/IrOx-Modified Electrodes: Applications in Behavioral Modulation and Neural Signal Recording in Mice.
+        <i>PubMed Central</i>.
+        <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11051784/" target="_blank" rel="noopener noreferrer">
+          https://pmc.ncbi.nlm.nih.gov/articles/PMC11051784/
+        </a>
+      </li>
+    </ol>
   </div>
 </body>
 </html>
