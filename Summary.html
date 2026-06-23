@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- 这一行负责手机端适配，很重要 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Summary</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Times New Roman", Times, serif;
+      background-color: white;
+      color: black;
+      margin: 0;
+      padding: 0;
+      line-height: 1.9;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 18px;
+    }
+
+    .section {
+      margin-bottom: 46px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+
+    .main-sentence {
+      font-size: 17px;
+      font-weight: bold;
+      margin-bottom: 14px;
+    }
+
+    p {
+      font-size: 17px;
+      margin: 0 0 12px 0;
+    }
+
+    .label {
+      font-size: 17px;
+      font-weight: bold;
+      margin-top: 14px;
+      margin-bottom: 8px;
+    }
+
+    ul {
+      margin: 8px 0 14px 34px;
+      padding-left: 22px;
+    }
+
+    li {
+      font-size: 17px;
+      margin-bottom: 10px;
+      padding-left: 8px;
+    }
+
+    .final-sentence {
+      font-size: 17px;
+      margin-top: 10px;
+    }
+
+    /* 手机端 */
+    @media (max-width: 600px) {
+      body {
+        line-height: 1.75;
+      }
+
+      .container {
+        max-width: none;
+        margin: 22px auto;
+        padding: 0 16px;
+      }
+
+      .section {
+        margin-bottom: 38px;
+      }
+
+      .section-title {
+        font-size: 17px;
+        margin-bottom: 16px;
+      }
+
+      .main-sentence,
+      p,
+      .label,
+      li,
+      .final-sentence {
+        font-size: 16px;
+      }
+
+      ul {
+        margin-left: 22px;
+        padding-left: 18px;
+      }
+
+      li {
+        margin-bottom: 9px;
+        padding-left: 4px;
+      }
+    }
+
+    /* 更小的手机 */
+    @media (max-width: 380px) {
+      .container {
+        padding: 0 12px;
+      }
+
+      .section-title {
+        font-size: 16px;
+      }
+
+      .main-sentence,
+      p,
+      .label,
+      li,
+      .final-sentence {
+        font-size: 15px;
+      }
+
+      ul {
+        margin-left: 18px;
+        padding-left: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="section">
+      <div class="section-title">1.&emsp;ADC (Analog-to-Digital Converter)</div>
+
+      <div class="main-sentence">
+        ADC converts continuous analog neural signals into discrete digital values.
+      </div>
+
+      <ul>
+        <li>Higher ADC resolution improves waveform accuracy.</li>
+        <li>However, it increases data volume and communication cost.</li>
+        <li>In this study, ADC resolutions of 4, 8, 12, and 16 bits were compared.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-title">2.&emsp;Difference Between RMSE and Correlation Coefficient</div>
+
+      <p>RMSE→ Measures the magnitude of error from the original waveform</p>
+      <p>Correlation Coefficient→ Measures the similarity of waveform shape</p>
+
+      <div class="label">Example</div>
+
+      <ul>
+        <li>Small RMSE → waveform values are close to the original.</li>
+        <li>High correlation coefficient → waveform features and trends are preserved.</li>
+      </ul>
+
+      <p class="final-sentence">
+        A waveform can have a <b>high correlation coefficient but a large RMSE</b>
+        if the overall shape is similar but the amplitude is different.
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>
